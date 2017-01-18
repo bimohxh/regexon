@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  </head>
+<body>
+  <div id="app">
+    <input type="text" v-model="regstr"/>
+    <p id="errorBox" class="code">Error Message</p>
+    <div id="graphCt" class="code"></div>
+  </div>
+<script src="js/vue.min.js" charset="utf-8"></script>
+<script src="js/require.js" charset="utf-8"></script>
+<script src="js/visualize.js"></script>
+
+<script>
+  var App = new Vue({
+    el: '#app',
+    data: {
+      regstr: ''
+    },
+    methods: {
+    },
+    watch: {
+      regstr: function () {
+        VS.visualize(App.regstr)
+      }
+    }
+  })
+</script>
+
+</body>
